@@ -1,0 +1,27 @@
+{
+  "name": "@thinkhuman/biome-config",
+  "version": "1.0.0",
+  "description": "ThinkHuman's shared Biome configuration",
+  "type": "module",
+  "exports": {
+    "./biome": "./biome.json"
+  },
+  "files": [
+    "biome.json"
+  ],
+  "peerDependencies": {
+    "@biomejs/biome": ">=2.6.4 <3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.4"
+  },
+  "scripts": {
+    "check": "biome check biome.json package.json test/run.mjs",
+    "test": "node test/run.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThinkHumanDotDev/biome-config.git"
+  },
+  "license": "MIT"
+}
