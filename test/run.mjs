@@ -51,6 +51,9 @@ const written = readFileSync(join(dir, 'src', 'unformatted.ts'), 'utf8')
 const expected = readFileSync(join(dir, 'src', 'unformatted.expected.ts'), 'utf8')
 expect('check --write produces the org style', written === expected, `got:\n${written}`)
 
+const css = run(['check', 'src/styles.scss'])
+expect('CSS and SCSS keep single quotes (the Prettier style)', css.ok, css.out)
+
 const yaml = run(['check', 'src/workflow.yml'])
 expect('YAML keeps single quotes (the Prettier style)', yaml.ok, yaml.out)
 
