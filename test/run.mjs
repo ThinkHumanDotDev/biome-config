@@ -51,6 +51,14 @@ const written = readFileSync(join(dir, 'src', 'unformatted.ts'), 'utf8')
 const expected = readFileSync(join(dir, 'src', 'unformatted.expected.ts'), 'utf8')
 expect('check --write produces the org style', written === expected, `got:\n${written}`)
 
+run(['check', '--write', 'src/classic-script.js'])
+const classic = readFileSync(join(dir, 'src', 'classic-script.js'), 'utf8')
+expect(
+  "check --write keeps 'use strict' in a classic script",
+  classic.startsWith("'use strict'"),
+  classic,
+)
+
 const css = run(['check', 'src/styles.scss'])
 expect('CSS and SCSS keep single quotes (the Prettier style)', css.ok, css.out)
 

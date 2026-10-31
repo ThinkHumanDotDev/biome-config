@@ -24,6 +24,12 @@
   },
   "markdown": { "formatter": { "enabled": false } },
   "yaml": { "formatter": { "quoteStyle": "single" } },
-  "linter": { "enabled": true, "rules": { "preset": "recommended" } },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "suspicious": { "noRedundantUseStrict": "off" }
+    }
+  },
   "assist": { "enabled": true, "actions": { "source": { "organizeImports": "on" } } }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@thinkhuman/biome-config",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "ThinkHuman's shared Biome configuration",
   "type": "module",
   "exports": {
