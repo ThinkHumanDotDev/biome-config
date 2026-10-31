@@ -3,9 +3,11 @@
 ThinkHuman's shared [Biome](https://biomejs.dev) configuration: one formatter style and one
 lint preset for every repo.
 
-- **Style:** 2 spaces, 100 columns, single quotes (JS, CSS and YAML), no semicolons, trailing commas. This is the
+- **Style:** 2 spaces, 100 columns, single quotes (JS, CSS and YAML), semicolons only where needed, trailing commas. This is the
   Prettier style the repos used before Biome, so moving a Prettier repo changes very little.
-- **Lint:** Biome's `recommended` preset; imports sorted by the organize-imports assist.
+- **Lint:** Biome's `recommended` preset, minus `noRedundantUseStrict`: Biome treats every `.js` file
+  as a module, so its fix would delete `'use strict'` from classic browser scripts. Imports are sorted
+  by the organize-imports assist.
 - **Files:** respects `.gitignore`; unknown file types are skipped. Markdown is not formatted: the
   repos' docs use compact `| --- |` tables, which Biome's Markdown formatter pads.
 
@@ -17,16 +19,16 @@ every package manager accepts.
 
 ```bash
 # bun
-bun add -d --exact @biomejs/biome@2.6.4 @thinkhuman/biome-config@github:ThinkHumanDotDev/biome-config#v1.3.0
+bun add -d --exact @biomejs/biome@2.6.4 @thinkhuman/biome-config@github:ThinkHumanDotDev/biome-config#v1.4.0
 
 # npm
-npm install --save-dev --save-exact @biomejs/biome@2.6.4 @thinkhuman/biome-config@github:ThinkHumanDotDev/biome-config#v1.3.0
+npm install --save-dev --save-exact @biomejs/biome@2.6.4 @thinkhuman/biome-config@github:ThinkHumanDotDev/biome-config#v1.4.0
 
 # yarn
-yarn add --dev --exact @biomejs/biome@2.6.4 @thinkhuman/biome-config@github:ThinkHumanDotDev/biome-config#v1.3.0
+yarn add --dev --exact @biomejs/biome@2.6.4 @thinkhuman/biome-config@github:ThinkHumanDotDev/biome-config#v1.4.0
 
 # pnpm
-pnpm add --save-dev --save-exact @biomejs/biome@2.6.4 @thinkhuman/biome-config@github:ThinkHumanDotDev/biome-config#v1.3.0
+pnpm add --save-dev --save-exact @biomejs/biome@2.6.4 @thinkhuman/biome-config@github:ThinkHumanDotDev/biome-config#v1.4.0
 ```
 
 Yarn 2 and later: Biome finds the extended config in `node_modules`, so set `nodeLinker: node-modules`
