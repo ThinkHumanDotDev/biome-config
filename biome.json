@@ -20,6 +20,7 @@
   },
   "css": { "parser": { "tailwindDirectives": true } },
   "markdown": { "formatter": { "enabled": false } },
+  "yaml": { "formatter": { "quoteStyle": "single" } },
   "linter": { "enabled": true, "rules": { "preset": "recommended" } },
   "assist": { "enabled": true, "actions": { "source": { "organizeImports": "on" } } }
 }
