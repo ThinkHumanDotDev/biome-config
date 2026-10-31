@@ -51,4 +51,7 @@ const written = readFileSync(join(dir, 'src', 'unformatted.ts'), 'utf8')
 const expected = readFileSync(join(dir, 'src', 'unformatted.expected.ts'), 'utf8')
 expect('check --write produces the org style', written === expected, `got:\n${written}`)
 
+const docs = run(['check', 'src/compact-table.md'])
+expect('Markdown is left as written (compact tables stay compact)', docs.ok, docs.out)
+
 process.exit(failed ? 1 : 0)
