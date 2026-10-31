@@ -3,7 +3,7 @@
 ThinkHuman's shared [Biome](https://biomejs.dev) configuration: one formatter style and one
 lint preset for every repo.
 
-- **Style:** 2 spaces, 100 columns, single quotes, no semicolons, trailing commas. This is the
+- **Style:** 2 spaces, 100 columns, single quotes (JS and YAML), no semicolons, trailing commas. This is the
   Prettier style the repos used before Biome, so moving a Prettier repo changes very little.
 - **Lint:** Biome's `recommended` preset; imports sorted by the organize-imports assist.
 - **Files:** respects `.gitignore`; unknown file types are skipped. Markdown is not formatted: the
@@ -12,7 +12,7 @@ lint preset for every repo.
 ## Use it
 
 ```bash
-pnpm add -D -E @biomejs/biome@2.6.4 github:ThinkHumanDotDev/biome-config#v1.1.0
+pnpm add -D -E @biomejs/biome@2.6.4 github:ThinkHumanDotDev/biome-config#v1.2.0
 ```
 
 `biome.json` at the repo root:
