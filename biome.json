@@ -19,6 +19,7 @@
     }
   },
   "css": { "parser": { "tailwindDirectives": true } },
+  "markdown": { "formatter": { "enabled": false } },
   "linter": { "enabled": true, "rules": { "preset": "recommended" } },
   "assist": { "enabled": true, "actions": { "source": { "organizeImports": "on" } } }
 }

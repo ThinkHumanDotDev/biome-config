@@ -6,12 +6,13 @@ lint preset for every repo.
 - **Style:** 2 spaces, 100 columns, single quotes, no semicolons, trailing commas. This is the
   Prettier style the repos used before Biome, so moving a Prettier repo changes very little.
 - **Lint:** Biome's `recommended` preset; imports sorted by the organize-imports assist.
-- **Files:** respects `.gitignore`; unknown file types are skipped.
+- **Files:** respects `.gitignore`; unknown file types are skipped. Markdown is not formatted: the
+  repos' docs use compact `| --- |` tables, which Biome's Markdown formatter pads.
 
 ## Use it
 
 ```bash
-pnpm add -D -E @biomejs/biome@2.6.4 github:ThinkHumanDotDev/biome-config#v1.0.0
+pnpm add -D -E @biomejs/biome@2.6.4 github:ThinkHumanDotDev/biome-config#v1.1.0
 ```
 
 `biome.json` at the repo root:
